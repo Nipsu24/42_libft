@@ -6,7 +6,7 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:03:45 by mmeier            #+#    #+#             */
-/*   Updated: 2023/10/24 15:08:10 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/01 11:59:21 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isprint(int n)
 		return (1);
 	return (0);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -38,3 +38,4 @@ int	main(void)
 	printf("%d""\n", ft_isprint(e));
 	return (0);
 }
+*/
