@@ -6,27 +6,24 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:20:12 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/02 10:20:39 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/08 12:18:29 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-void	ft_checkposneg(const char *str)
+
+int	ft_convertno(char *str, int n)
 {
-	int	i;
-	int	minus;
-	int	plus;
-	
-	minus = 0;
-	plus = 0;
-	i = 0;
-	while (str[i] == '-' || str[i] == '+')
+	int	number;
+
+	number = 0;
+	while (str[n] >= 48 && str[n] <= 57)
 	{
-		minus++;
-		plus++;
-		i++;
+		number *= 10;
+		number += str[n] - 48;
+		n++;
 	}
+	return (number);
 }
-*/
+
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -40,8 +37,6 @@ int	ft_atoi(const char *str)
 	i = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
-/*	ft_checkposneg(str);*/
-
 	while (str[i] == '-' || str[i] == '+')
 	{
 		if (minus + plus > 1)
@@ -50,26 +45,8 @@ int	ft_atoi(const char *str)
 		plus++;
 		i++;
 	}
-
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		number *= 10;
-		number += str[i] - 48;
-		i++;
-	}
+	number = ft_convertno(str, i);
 	if (minus == 1)
 		return (-number);
 	return (number);
-}
-
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(void)
-{
-	char *str = "214748364718888888ab567";
-	printf("%d""\n", ft_atoi(str));
-	printf("library function:""\n");
-	printf("%d", atoi(str));
-	return (0);
 }

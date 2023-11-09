@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 16:09:50 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/03 15:35:53 by mmeier           ###   ########.fr       */
+/*   Created: 2023/11/08 16:44:21 by mmeier            #+#    #+#             */
+/*   Updated: 2023/11/08 17:08:50 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*i counts how often c occurs in *s*/
-/*if c does not occur in *s Null is to be returned*/
-/* r27-28 needed, as function should return 0-terminator*/
-char	*ft_strrchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char	*ptr;
+	int		s1len;
+	int		s2len;
+	int		i;
+	int		j;
 
 	i = 0;
-	while (*s != '\0')
+	j = 0;
+	s1len = ft_strlen(s1);
+	s2len = ft_strlen(s2);
+	ptr = (char *) malloc ((s1len + s2len + 1) * sizeof(char));
+	if (ptr == 0)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		if (*s == c)
-			i++;
-		s++;
+		ptr[i] = s1[i];
+		i++;
 	}
-	if (*s == c)
-		return ((char *)(s));
-	if (i == 0)
-		return (0);
-	while (!(s == 0))
+	while (s2[j] != '\0')
 	{
-		if (*s == c)
-			return ((char *)(s));
-		s--;
+		ptr[i + j] = s2[j];
+		j++;
 	}
-	return (0);
+	ptr[i + j] = '\0';
+	return (ptr);
 }

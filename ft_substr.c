@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 16:02:18 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/03 15:36:13 by mmeier           ###   ########.fr       */
+/*   Created: 2023/11/08 15:58:44 by mmeier            #+#    #+#             */
+/*   Updated: 2023/11/08 16:25:59 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int n)
+#include "libft.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (n >= 65 && n <= 90)
-		n += 32;
-	return (n);
+	char	*ptr;
+
+	if (len == '\0')
+		return (0);
+	ptr = (char *) malloc ((len + 1) * sizeof(char));
+	if (ptr == 0)
+		return (NULL);
+	ft_memcpy(ptr, &s[start], len);
+	ptr[len] = '\0';
+	return (ptr);
 }

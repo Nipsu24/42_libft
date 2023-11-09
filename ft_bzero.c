@@ -6,11 +6,11 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 14:05:11 by mmeier            #+#    #+#             */
-/*   Updated: 2023/10/30 14:45:53 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/03 15:26:34 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -23,23 +23,3 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 	}
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char s[] = "Hello World!";
-	size_t	n;
-
-	n = 4;
-
-	printf("own function" "\n");
-	ft_bzero(s, n);
-	printf("%s""\n", s);
-
-	printf("library function" "\n");
-	bzero(s, n);
-	printf("%s", s);
-	return (0);
-}
-*/
