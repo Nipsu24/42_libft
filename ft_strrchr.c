@@ -6,7 +6,7 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 16:09:50 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/03 15:35:53 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/15 15:46:50 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (*s != '\0')
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			i++;
 		s++;
 	}
-	if (*s == c)
+	if (*s == (char)c)
 		return ((char *)(s));
 	if (i == 0)
 		return (0);
 	while (!(s == 0))
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			return ((char *)(s));
 		s--;
 	}
