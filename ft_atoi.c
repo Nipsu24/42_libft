@@ -6,13 +6,13 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:20:12 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/15 10:02:59 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/15 16:46:37 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_convertno(const char *str, int n, int minus)
+static int	ft_convertno(const char *str, int n, int minus)
 {
 	long int	number;
 	long int	prenbr;
