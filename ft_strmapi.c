@@ -6,7 +6,7 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:33:23 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/10 14:25:31 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/16 13:04:10 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	{
 		while (s[i] != '\0')
 		{
-			f(i, s[i]);
 			ptr[i] = f(i, s[i]);
 			i++;
 		}
