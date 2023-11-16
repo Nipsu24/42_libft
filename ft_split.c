@@ -6,7 +6,7 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:21:38 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/16 16:13:16 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/16 17:01:44 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ while (s[i] != 0)
 		 while (s[i] != 0 && s[i] == c)
 				i++;
 	}
+	strings[j] = 0;
 return (strings);
 }
 /*
@@ -66,6 +67,7 @@ int	main(void)
 {
 				char s[] = "Hallo,World,!";
     char c = ',';
+				char **split = ft_split(s, c);
     int i = 0;
     ft_split(s, c);
     while (split[i])
