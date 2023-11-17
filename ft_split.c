@@ -6,7 +6,7 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:21:38 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/16 17:01:44 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/17 14:37:12 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,31 @@ static int	ft_subcount(char const *s, char c)
 	count = 0;
 	while (s[i] != 0)
 	{
-			if (s[i] != 0 && s[i] != c)
-				{
-					count++;
-					while (s[i] != 0 && s[i] != c)
-					i++;
-				}
-		 while (s[i] != 0 && s[i] == c)
+		if (s[i] != 0 && s[i] != c)
+		{
+			count++;
+			while (s[i] != 0 && s[i] != c)
 				i++;
+		}
+		while (s[i] != 0 && s[i] == c)
+			i++;
 	}
 	return (count);
 }
-char	**ft_split(char const *s, char c)
+
+static void	**ft_free(char **result, size_t j)
 {
-	char **strings;
+	while (j > 0)
+	{
+		free(result[j - 1]);
+		j--;
+	}
+	free(result);
+	return (NULL);
+}
+
+static char	**ft_writewords(char const *s, char c, char **strings)
+{
 	size_t	start;
 	size_t	i;
 	size_t	j;
@@ -43,33 +54,31 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	start = 0;
-	strings = (char**) malloc (sizeof(char *) * (ft_subcount(s, c) + 1));
-	if (strings == 0 || s == 0)
-		return (NULL);
-while (s[i] != 0)
+	while (s[i] != 0)
 	{
-			if (s[i] != 0 && s[i] != c)
-				{
-					start = i;
-					while (s[i] != 0 && s[i] != c)
-					i++;
-				}
-			strings[j] = ft_substr(s, start, (i - start));
-				j++;
-		 while (s[i] != 0 && s[i] == c)
+		if (s[i] != 0 && s[i] != c)
+		{
+			start = i;
+			while (s[i] != 0 && s[i] != c)
 				i++;
+			strings[j] = ft_substr(s, start, (i - start));
+			if (strings[j] == 0)
+				return (ft_free(strings, j));
+			j++;
+		}
+		else
+			i++;
 	}
 	strings[j] = 0;
-return (strings);
+	return (strings);
 }
-/*
-int	main(void)
+
+char	**ft_split(char const *s, char c)
 {
-				char s[] = "Hallo,World,!";
-    char c = ',';
-				char **split = ft_split(s, c);
-    int i = 0;
-    ft_split(s, c);
-    while (split[i])
-        printf("%s\n", split[i++]);
-}*/
+	char	**strings;
+
+	strings = (char **) malloc (sizeof(char *) * (ft_subcount(s, c) + 1));
+	if (strings == 0 || s == 0)
+		return (NULL);
+	return (ft_writewords(s, c, strings));
+}
