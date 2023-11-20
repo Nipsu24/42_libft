@@ -6,12 +6,11 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:21:38 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/17 14:37:12 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/20 10:29:39 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_subcount(char const *s, char c)
 {
