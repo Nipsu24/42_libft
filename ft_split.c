@@ -6,7 +6,7 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:21:38 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/20 10:29:39 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/11/20 11:03:54 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_subcount(char const *s, char c)
 	return (count);
 }
 
-static void	**ft_free(char **result, size_t j)
+static char	**ft_free(char **result, size_t j)
 {
 	while (j > 0)
 	{

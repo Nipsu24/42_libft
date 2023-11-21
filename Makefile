@@ -6,7 +6,7 @@
 #    By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:47:56 by mmeier            #+#    #+#              #
-#    Updated: 2023/11/08 17:03:54 by mmeier           ###   ########.fr        #
+#    Updated: 2023/11/20 16:45:35 by mmeier           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,10 +36,15 @@ FILES = ft_calloc.c \
 		ft_toupper.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
-		ft_putnbr_fd. \
-		ft_putendl_fd \
+		ft_putnbr_fd.c \
+		ft_putendl_fd.c \
+		ft_split.c \
 		ft_substr.c \
-		ft_strjoin.c
+		ft_strjoin.c \
+		ft_striteri.c \
+		ft_strmapi.c \
+		ft_strtrim.c \
+		ft_itoa.c
 
 OBJ = $(FILES:.c=.o)
 
@@ -48,7 +53,7 @@ FLAGS += -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ) 
 
 clean:
 	rm -f $(OBJ)
