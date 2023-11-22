@@ -6,11 +6,12 @@
 #    By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:47:56 by mmeier            #+#    #+#              #
-#    Updated: 2023/11/20 16:45:35 by mmeier           ###   ########.fr        #
+#    Updated: 2023/11/22 11:05:50 by mmeier           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+CC = cc
 FILES = ft_calloc.c \
 		ft_isascii.c \
 		ft_memchr.c \
@@ -50,6 +51,9 @@ OBJ = $(FILES:.c=.o)
 
 FLAGS += -Wall -Wextra -Werror
 
+.c.o:
+	$(CC) $(FLAGS) -c -o $@ $<
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -62,3 +66,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
