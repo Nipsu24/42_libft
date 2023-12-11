@@ -6,7 +6,7 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:58:44 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/15 16:21:37 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/12/11 10:05:49 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
 
+	if (!s)
+		return (0);
 	if (start + len > (ft_strlen(s)))
 		len = (ft_strlen(s) - start);
 	if (start >= ft_strlen(s))

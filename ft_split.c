@@ -6,7 +6,7 @@
 /*   By: mmeier <mmeier@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 09:21:38 by mmeier            #+#    #+#             */
-/*   Updated: 2023/11/20 11:03:54 by mmeier           ###   ########.fr       */
+/*   Updated: 2023/12/11 10:17:17 by mmeier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**strings;
 
+	if (!s)
+		return (0);
 	strings = (char **) malloc (sizeof(char *) * (ft_subcount(s, c) + 1));
 	if (strings == 0 || s == 0)
 		return (NULL);
