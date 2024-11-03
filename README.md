@@ -2,8 +2,6 @@
 
 > Hive Helsinki (School 42) first curriculum project (Rank00)
 
-The repository contains 34 custom made functions, orienting to the respective standard library functions of the C programming language. 
-
 <h2 align="center">
 	<a href="#about">About</a>
 	<span> · </span>
@@ -17,6 +15,7 @@ The repository contains 34 custom made functions, orienting to the respective st
 </h2>
 
 ## About
+The repository contains 34 custom made functions, mainly orienting to the respective standard library functions of the C programming language. 
 
 ## Index
 * [`ft_isascii`](https://github.com/Nipsu24/libft/blob/master/ft_isascii.c)
