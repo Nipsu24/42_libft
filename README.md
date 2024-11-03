@@ -19,7 +19,6 @@ The repository contains 34 custom made functions, orienting to the respective st
 ## About
 
 ## Index
-### Functions from `<ctype.h>` library
 * [`ft_isascii`](https://github.com/Nipsu24/libft/blob/master/ft_isascii.c)
 
 ## Requirements
