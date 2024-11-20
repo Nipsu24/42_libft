@@ -15,7 +15,8 @@
 </h2>
 
 ## About
-The repository contains 34 custom made functions, mainly orienting to the respective standard library functions of the C programming language. 
+The repository contains 34 custom made functions, mainly orienting to the respective standard library functions of the C programming language. Being the first project in the 42 school's curriculum, it intends to familiarize oneself with the basics of C. 
+The resulting library is used (and extended) throughout future school projects written in C language.
 
 ## Functions
 * [`ft_atoi.c`](https://github.com/Nipsu24/libft/blob/master/ft_atoi.c) &middot; [`ft_bzero.c`](https://github.com/Nipsu24/libft/blob/master/ft_bzero.c ) &middot; [`ft_calloc.c`](https://github.com/Nipsu24/libft/blob/master/ft_calloc.c ) &middot; [`ft_isalnum.c`](https://github.com/Nipsu24/libft/blob/master/ft_isalnum.c) &middot; [`ft_isalpha.c`](https://github.com/Nipsu24/libft/blob/master/ft_isalpha.c) &middot; [`ft_isascii.c`](https://github.com/Nipsu24/libft/blob/master/ft_isascii.c) &middot; [`ft_isdigit.c`](https://github.com/Nipsu24/libft/blob/master/ft_isdigit.c) &middot; [`ft_isprint.c`](https://github.com/Nipsu24/libft/blob/master/ft_isprint.c)
@@ -47,7 +48,7 @@ $ make fclean
 
 ### 3. Using it in your code (basic example)
 
-To use the library functions, include header path e.g in your main.c file (given libft is in a subfolder):
+To use the library functions, include the header path e.g in your main.c file (given libft is in a subfolder):
 ```
 #include "libft/libft.h"
 ```
